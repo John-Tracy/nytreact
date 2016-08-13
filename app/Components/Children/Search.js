@@ -2,6 +2,24 @@ var React = require('react');
 
 var Search = React.createClass({
 
+		getInitialState: function(){
+			return {
+				term: ""
+			}
+		},
+
+		handleClick: function(){
+
+			
+			 this.state.term
+		},
+
+		setTerm: function(event){
+			var newState = {};
+			newState[event.target.id] = event.target.value;
+			this.setState(newState);
+		},
+
 	// Here we render the component
 	render: function(){
 
@@ -15,10 +33,12 @@ var Search = React.createClass({
 							
 							<div className="panel panel-default">
 								<div className="panel-heading">
-									<h3 className="panel-title">Results</h3>
+									<h3 className="panel-title">Search NYT!</h3>
 								</div>
 								<div className="panel-body">
-								<p>Where search results will go</p>
+									<input type="text" className="form-control text-center" id="term" onChange= {this.setTerm} required/>
+									<br />
+									<button type="button" className="btn btn-primary" onClick={this.handleClick}>Search</button>
 								</div>
 							</div>
 

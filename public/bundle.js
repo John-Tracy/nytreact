@@ -25441,45 +25441,65 @@
 /* 224 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	var React = __webpack_require__(1);
 
 	var Search = React.createClass({
-		displayName: "Search",
+		displayName: 'Search',
 
+
+		getInitialState: function getInitialState() {
+			return {
+				term: ""
+			};
+		},
+
+		handleClick: function handleClick() {
+
+			console.log('submitted search');
+			console.log('term: ' + this.state.term);
+		},
+
+		setTerm: function setTerm(event) {
+			var newState = {};
+			newState[event.target.id] = event.target.value;
+			this.setState(newState);
+		},
 
 		// Here we render the component
 		render: function render() {
 
 			return React.createElement(
-				"div",
-				{ className: "container" },
+				'div',
+				{ className: 'container' },
 				React.createElement(
-					"div",
-					{ className: "row" },
+					'div',
+					{ className: 'row' },
 					React.createElement(
-						"div",
-						{ className: "col-lg-12" },
+						'div',
+						{ className: 'col-lg-12' },
 						React.createElement(
-							"div",
-							{ className: "panel panel-default" },
+							'div',
+							{ className: 'panel panel-default' },
 							React.createElement(
-								"div",
-								{ className: "panel-heading" },
+								'div',
+								{ className: 'panel-heading' },
 								React.createElement(
-									"h3",
-									{ className: "panel-title" },
-									"Results"
+									'h3',
+									{ className: 'panel-title' },
+									'Search NYT!'
 								)
 							),
 							React.createElement(
-								"div",
-								{ className: "panel-body" },
+								'div',
+								{ className: 'panel-body' },
+								React.createElement('input', { type: 'text', className: 'form-control text-center', id: 'term', onChange: this.setTerm, required: true }),
+								React.createElement('br', null),
 								React.createElement(
-									"p",
-									null,
-									"Where search results will go"
+									'button',
+									{ type: 'button', className: 'btn btn-primary', onClick: this.handleClick },
+									'Search'
 								)
 							)
 						)
