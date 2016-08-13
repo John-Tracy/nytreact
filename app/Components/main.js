@@ -21,8 +21,8 @@ var Main = React.createClass({
 					<div className="jumbotron">
 						<h1>NY Times Article Scrubber</h1>
 						<p><em>Search for and annotate articles of interest!</em></p>
-						<a href="#/info"><button className="btn btn-default">Search</button></a>
-						<a href="#/chat"><button className="btn btn-default">Saved Articles</button></a>
+						<a href="#/search"><button className="btn btn-default">Search</button></a>
+						<a href="#/saved"><button className="btn btn-default">Saved Articles</button></a>
 					</div>
 					<div className="row">
 						<div className="text-center">

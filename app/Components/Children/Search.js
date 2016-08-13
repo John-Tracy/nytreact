@@ -1,6 +1,6 @@
 var React = require('react');
 
-var Info = React.createClass({
+var Search = React.createClass({
 
 	// Here we render the component
 	render: function(){

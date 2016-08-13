@@ -56,3 +56,8 @@ app.get('/', function(req, res){
 //  	console.log(newBody.response.docs[0]);
   
 // })
+
+// Listener
+app.listen(PORT, function() {
+  console.log("App listening on PORT: " + PORT);
+});

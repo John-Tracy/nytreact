@@ -6,7 +6,7 @@ var ReactDOM = require('react-dom');
 var Router = require('react-router').Router
 
 // Grabs the Routes
-var routes = require('./config/routes');
+var routes = require('./config/routes.js');
 
 // Renders the contents according to the route page. 
 ReactDOM.render(
