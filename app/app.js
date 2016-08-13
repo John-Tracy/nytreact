@@ -1,13 +1,16 @@
-// api stuff for ny times
-request.get({
-  url: "https://api.nytimes.com/svc/search/v2/articlesearch.json",
-  qs: {
-    'api-key': "51e97822ecd646c0b8a6b7f0999fd3e6",
-    'q': "trump",
-    'begin_date': "20160710",
-    'end_date': "20160808"
-  },
-}, function(err, response, body) {
-  body = JSON.parse(body);
-  console.log(body);
-})
+// Include the Main React Dependencies
+var React = require('react');
+var ReactDOM = require('react-dom');
+
+// Grab the property associated with the Router
+var Router = require('react-router').Router
+
+// Grabs the Routes
+var routes = require('./config/routes');
+
+// Renders the contents according to the route page. 
+ReactDOM.render(
+
+	<Router>{routes}</Router>,
+	document.getElementById('app')
+)
