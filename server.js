@@ -39,23 +39,24 @@ app.get('/', function(req, res){
   res.sendFile('./public/index.html');
 });
 
+app.post('/api/search', function(req, res){
+	console.log("api: " + req.body.term);
+	// api test
+	request.get({
+	  url: "https://api.nytimes.com/svc/search/v2/articlesearch.json",
+	  qs: {
+	    'api-key': "51e97822ecd646c0b8a6b7f0999fd3e6",
+	    'q': req.body.term,
+	    'begin_date': "20160710",
+	    'end_date': "20160808"
+	  },
+	}, function(err, response, body) {
+		console.log(JSON.parse(body.response.docs[0]));
+	 	
+	  res.json(body.response.docs[0]);
+	});
+});
 
-
-
-// api test
-// request.get({
-//   url: "https://api.nytimes.com/svc/search/v2/articlesearch.json",
-//   qs: {
-//     'api-key': "51e97822ecd646c0b8a6b7f0999fd3e6",
-//     'q': "trump",
-//     'begin_date': "20160710",
-//     'end_date': "20160808"
-//   },
-// }, function(err, response, body) {
-// 	newBody = JSON.parse(body)
-//  	console.log(newBody.response.docs[0]);
-  
-// })
 
 // Listener
 app.listen(PORT, function() {

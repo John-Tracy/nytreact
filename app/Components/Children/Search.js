@@ -1,5 +1,8 @@
 var React = require('react');
 
+// require helper methods to run queries and requests.
+var helpers = require('../utils/helpers.js')
+
 var Search = React.createClass({
 
 		getInitialState: function(){
@@ -10,8 +13,8 @@ var Search = React.createClass({
 
 		handleClick: function(){
 
-			
-			 this.state.term
+			helpers.runSearch(this.state.term);
+		
 		},
 
 		setTerm: function(event){
